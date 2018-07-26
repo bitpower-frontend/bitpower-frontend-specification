@@ -1,11 +1,17 @@
 ## 介绍
 此文档主要介绍 Javascript 的编码规范以及基本风格要求。
 
+<br/>
+
 ## 版本要求
 最低 JS 版本是 ES5, 尽量以 ES6（即 ES2015）规范来编写代码，因为我们会使用 babel 做兼容转译。
 
+<br/>
+
 ## 检测工具
 使用 [ESLint](https://eslint.org/) 进行检查，基于 [eslint-config-bitpower](https://github.com/bitpower-frontend/eslint-config-bitpower) 配置。
+
+<br/>
 
 ## 具体规范
 
@@ -62,7 +68,6 @@ const obj = {
 };
 ```
 
-<br>
 
 ### 代码风格规范
 
