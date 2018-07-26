@@ -40,11 +40,10 @@ for(let i=0, ilen=arr.length; i<ilen; i++){
 }
 ```
 
-
 5.&nbsp;**禁止** 尝试修改内置对象原型。
 
 
-6.&nbsp;**尽量** 使用 `const` 和 `let` 替代 `var` 命名变量。（注意三者使用区别）
+6.&nbsp;**必须** 使用 `const` 和 `let` 替代 `var` 命名变量。（注意三者使用区别）
 
 
 7.&nbsp;对象属性和方法 **推荐** 使用简写方式。
@@ -67,6 +66,83 @@ const obj = {
   }
 };
 ```
+
+8.&nbsp; **推荐** 使用解构赋值。
+
+1. 获取对象部分属性
+```js
+const user = {
+  age: 24,
+  name: 'Hisheng',
+  city: 'California',
+};
+const { age, name } = user;
+```
+2. 获取数组部分成员
+```js
+const users = ['Hisheng', 'James', 'Michael'];
+const [champion, secondPlace] = users;
+```
+3. 接受函数返回时
+```js
+function getUser () {
+  // do something
+  return {
+    age: 24,
+    name: 'Hisheng',
+    city: 'California',
+  };
+}
+
+const { age, name } = getUser();
+```
+
+9.&nbsp; **推荐** 使用函数声明而不是函数表达式定义函数。
+```js
+// 推荐
+function foo () {
+  // do something
+}
+// 不推荐
+const foo = function () {
+  // do something
+}
+```
+
+10.&nbsp; **尽量** 不要修改函数的参数。
+```js
+// 推荐
+function foo (opts = {}) {
+  // do something
+}
+// 不推荐
+function foo (opts) {
+  opts = opts || {}
+}
+```
+
+11.&nbsp; 模块的导出遵从 `先定义，最后底部统一导出` 的方式。
+```js
+// 推荐
+const bar = 1;
+function foo (opts = {}) {
+  // do something
+}
+export {
+  bar,
+  foo,
+};
+
+// 不推荐
+export const bar = 1;
+export function foo (opts = {}) {
+  // do something
+}
+```
+
+12.&nbsp; 使用 `for ... in` 时要注意是否会循环到原型上的属性，必要时使用 `Object.prototype.hasOwnProperty` 过滤。
+
+13.&nbsp; **禁止** 使用 `evel` 和 `with`。
 
 
 ### 代码风格规范
@@ -178,6 +254,17 @@ test(a, b,);
 
 
 6.&nbsp;关于空格的使用
+> 在关键字前后添加空格。
+```js
+if () {
+  //
+} else {
+  //
+}
+switch () {
+  //
+}
+```
 
 > 对象属性，数组元素之间 **必须** 以 **单个** 空格隔开
 
