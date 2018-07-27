@@ -172,4 +172,4 @@ img#avatar {}
 <br>
 
 ## 参考
-Goole CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.html#CSS
+Google CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.html#CSS
