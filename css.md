@@ -3,6 +3,11 @@
 
 <br/>
 
+## 检测工具
+使用 [stylelint](https://stylelint.io) 进行检查，基于 [stylelint-config-bitpower](https://github.com/bitpower-frontend/stylelint-config-bitpower) 配置。
+
+<br/>
+
 ## 具体规范
 1.&nbsp;**必须** 使用两个空格进行代码缩进。（IDE 设置 tab 用两个空格代替）
 
